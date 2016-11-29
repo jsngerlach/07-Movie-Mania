@@ -1,0 +1,35 @@
+body{
+	font-family: 'Bungee', cursive;
+	background: url(empc.jpg) no-repeat center center fixed;
+	background-size: cover ;
+}
+
+#titleHeader{
+	font-family: 'Bungee', cursive;
+	color: yellow;
+	background-color: rgba(245, 245, 245, 0.8);
+	font-size: 80px;
+	opacity: .975;
+}
+
+#inputButton{
+	font-family: 'Bungee', cursive;
+	opacity: .975
+}
+#output{
+	font-family: 'Bungee', cursive;
+	background-color: rgba(245, 245, 245, 0.4);
+	text-align: center;
+	font-size: 35px;
+	color: yellow;
+}
+
+#output2{
+	font-family: 'Bungee', cursive;
+	background-color: rgba(245, 245, 245, 0.4);
+	text-align: center;
+	font-size: 15px;
+	color: yellow;
+}
+
+

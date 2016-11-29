@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="" ng-app="app">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Movie Mainia</title>
+    <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
+    <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+
+<body ng-controller="MovieController as movieCtrl">
+    <div class="container">
+        <div id="titleHeader">
+            <p class="text-center">Movie Mania</p>
+        </div>
+        <hr>
+        <br>
+        <div id="inputButton">
+            <div class="input-group-btn">
+                <input type="text" class="form-control" placeholder="Movie  Title  Here  You  Maniac!" ng-model="movieCtrl.title">
+                <span class="input-group-btn"><button type="button" class="btn btn-info btn-lg" ng-click="movieCtrl.OmbdApiT(movieCtrl.title)">I'm feeling lucky!</button></span>
+                <span class="input-group-btn"><button type="button" class="btn btn-info btn-lg" ng-click="movieCtrl.OmbdApiS(movieCtrl.title)">Search all!</button></span>
+            </div>
+        </div>
+        <div style="margin-top: 15px" >
+            <div id="output" ng-if="movieCtrl.data">
+            <br>
+            <hr>
+            <br>
+                <img ng-src="{{movieCtrl.data.Poster}}" ></img>
+                <p>Title:  {{movieCtrl.data.Title}}</p>
+                <p>Year:  {{movieCtrl.data.Year}}</p>
+                <p>Actors:  {{movieCtrl.data.Actors}}</p>
+                <p>Ratings:  {{movieCtrl.data.imdbRating}}</p>
+                <p>Genre:  {{movieCtrl.data.Genre}}</p>
+            </div>
+            <div id="output2" ng-if="movieCtrl.results">
+                <div class="row">
+                    <div class="col-xs-4" ng-repeat="movie in movieCtrl.results">
+                        <img ng-src="{{movie.Poster}}" class="img-circle" height="225px" width="225px"></img>
+                        <p>Title:  {{movie.Title}}</p>
+                        <p>Year:  {{movie.Year}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- jQuery -->
+    <script src="//code.jquery.com/jquery.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
+    <script src="app/app.module.js"></script>
+    <script src="app/home/home.controller.js"></script>
+    <script src="app/core/movie.factory.js"></script>
+</body>
+
+</html>
